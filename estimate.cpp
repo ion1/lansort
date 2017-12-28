@@ -95,10 +95,10 @@ void Estimate::normalize(void) {
 }
 
 std::ostream &operator<<(std::ostream &out, const Candidate &candidate) {
-  std::cout << "Candidate{{";
+  out << "Candidate{{";
   std::copy(candidate.values.begin(), candidate.values.end(),
             std::ostream_iterator<int>(out, ","));
-  std::cout << "}," << candidate.log_p << "}";
+  out << "}," << candidate.log_p << "}";
 
   return out;
 }
