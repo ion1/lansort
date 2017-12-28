@@ -32,11 +32,13 @@ int main(void) {
     est.add_measurement(m, LS_NOISE_STDDEV);
 
     auto best = est.best_candidates();
+    auto happiness = std::get<0>(best).log_p - std::get<1>(best).log_p;
 
     std::cout << "iteration=" << i << " measurement=" << m
-              << " best=" << std::get<0>(best) << "\n";
+              << " best=" << std::get<0>(best) << " happiness=" << happiness
+              << "\n";
 
-    if (std::get<0>(best).log_p - std::get<1>(best).log_p >= threshold()) {
+    if (happiness >= threshold()) {
       break;
     }
   }
