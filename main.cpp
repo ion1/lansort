@@ -7,6 +7,10 @@
 #include "estimate.h"
 #include "measure.h"
 
+// Finish when the log probability of one candidate is greater than the next one
+// by this factor.
+static constexpr double threshold(void) { return log(1.0e9); }
+
 int main(void) {
   static_assert(sizeof(Estimate) <= 500000000,
                 "Memory consumption is reasonable");
@@ -32,7 +36,7 @@ int main(void) {
     std::cout << "iteration=" << i << " measurement=" << m
               << " best=" << std::get<0>(best) << "\n";
 
-    if (std::get<0>(best).log_p - std::get<1>(best).log_p >= 24) {
+    if (std::get<0>(best).log_p - std::get<1>(best).log_p >= threshold()) {
       break;
     }
   }
