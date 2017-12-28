@@ -9,7 +9,7 @@
 
 // Finish when the log probability of one candidate is greater than the next one
 // by this factor.
-static constexpr double threshold(void) { return log(1.0e9); }
+static constexpr double threshold(void) { return log(1.0e6); }
 
 int main(void) {
   static_assert(sizeof(Estimate) <= 500000000,
