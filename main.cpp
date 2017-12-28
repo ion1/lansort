@@ -16,7 +16,7 @@ int main(void) {
   std::random_device rdev;
   std::mt19937 reng(rdev());
 
-  std::array<ls_value_t, LS_ARRAY_SIZE> vals = {0, 0, 2, 3, 4, 4, 4, 8};
+  std::array<ls_value_t, LS_ARRAY_SIZE> vals = {0, 8, 2, 4, 4, 0, 4, 3};
 
   std::ofstream measurements_log("measurements.dat");
 
