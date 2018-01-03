@@ -1,4 +1,4 @@
-# lansort
+# lansort – a probabilistic sorting algorithm for integers
 
 This is an entry to a humorous competition that occurred at a small LAN party.
 
