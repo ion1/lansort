@@ -15,7 +15,7 @@ This program:
    ![Histogram of the sampled input list](https://raw.githubusercontent.com/ion1/lansort/master/example_output/measurements.svg?sanitize=true)
 1. ([`estimate.cpp`](estimate.cpp)) Generates a complete array of all the possible ordered lists of integers given a list length (such as 8) and an integer range (such as 0–9).
 1. Given a sample from the first part, computes the probability for each candidate list generating the sample and updates a total probability associated with each candidate.
-1. Selects a candidate as the result when its total probability is a million times higher than the probability of the next best candidate, or repeats with a fresh sample from the first part otherwise.
+1. ([`main.cpp`](main.cpp)) Selects a candidate as the result when its total probability is a million times higher than the probability of the next best candidate, or repeats with a fresh sample from the first part otherwise.
 1. As the candidates were generated as ordered lists, the sorting problem has been solved.
 
 [The output from a run of the program can be seen here](example_output/lansort.out). It shows the program receiving samples from the first part, selecting the best candidate list at each iteration and computing how happy it is with it (its log probability minus the log probability of the next best candidate) until it makes a final selection.
